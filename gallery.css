@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+:root {
+--beige: #F2E5D5;
+--pink: #F6DDE5;
+--blue: #D9ECF5;
+--brown: #80604B;
+--black: #292522;
+--cream: #FFFCF8;
+}
+ *{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Cormorant Garamond', serif;
+background: var(--cream);
+color: var(--black);
+}
+/* HEADER */
+.site-header {
+text-align: center;
+padding: 25px 15px;
+background: var(--beige);
+border-bottom: 1px solid #D9C7B5;
+}
+.brand {
+display: block;
+font-family: 'Playfair Display', serif;
+font-size: 43px;
+letter-spacing: 7px;
+color: var(--brown);
+text-decoration: none;
+}
+.site-header p {
+font-size: 12px;
+letter-spacing: 5px;
+color: var(--brown);
+}
+/* COLLECTION HEADING */
+.collection-heading {
+text-align: center;
+padding: 65px 15px 45px;
+background: linear-gradient(
+120deg,
+var(--pink),
+var(--beige),
+var(--blue)
+);
+}
+.collection-heading > p {
+letter-spacing: 5px;
+font-size: 13px;
+color: var(--brown);
+}
+.collection-heading h1 {
+font-family: 'Playfair Display', serif;
+font-size: clamp(35px, 6vw, 55px);
+font-weight: 400;
+color: var(--brown);
+margin: 15px 0;
+}
+.collection-heading span {
+font-size: 19px;
+color: var(--brown);
+}
+/* ART GALLERY */
+.gallery-container {
+max-width: 1250px;
+margin: auto;
+padding: 55px 25px;
+}
+.art-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 40px 25px;
+}
+.art-card {
+background: white;
+padding: 15px;
+text-align: center;
+border: 1px solid #E9DED2;
+box-shadow: 0 5px 20px rgba(80, 60, 40, 0.07);
+transition: transform 0.3s, box-shadow 0.3s;
+}
+.art-card:hover {
+transform: translateY(-7px);
+box-shadow: 0 12px 25px rgba(80, 60, 40, 0.13);
+}
+.art-card img {
+width: 100%;
+height: 320px;
+object-fit: contain;
+background: var(--beige);
+display: block;
+}
+.art-card h2 {
+font-family: 'Playfair Display', serif;
+font-size: 23px;
+font-weight: 400;
+color: var(--brown);
+margin-top: 18px;
+}
+.art-price {
+font-size: 20px;
+color: var(--black);
+margin: 8px 0 15px;
+}
+.view-button {
+background: var(--brown);
+color: white;
+border: 1px solid var(--brown);
+padding: 11px 25px;
+font-family: inherit;
+font-size: 15px;
+letter-spacing: 2px;
+cursor: pointer;
+transition: 0.3s;
+}
+.view-button:hover {
+background: var(--pink);
+color: var(--brown);
+}
+/* FOOTER */
+.gallery-footer {
+background: var(--beige);
+color: var(--brown);
+text-align: center;
+padding: 25px 10px;
+font-size: 12px;
+letter-spacing: 2px;
+}
+/* MOBILE */
+@media (max-width: 800px) {
+.art-grid {
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+.art-card img {
+    height: 250px;
+}
+}
+@media (max-width: 480px) {
+.gallery-container {
+padding: 30px 12px;
+}
+.art-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.art-card {
+    padding: 9px;
+}
+
+.art-card img {
+    height: 190px;
+}
+
+.art-card h2 {
+    font-size: 18px;
+}
+
+.art-price {
+    font-size: 16px;
+}
+
+.view-button {
+    padding: 9px 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+}
+/* Shopping Cart */
+
+.cart-button {
+
+    background: #80604B;
+
+    color: #FFFCF8;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 30px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.cart-button:hover {
+
+    background: #292522;
+
+}
+
+#cartSection {
+
+    margin: 45px auto;
+
+    padding: 30px;
+
+    max-width: 700px;
+
+    background: #FFFCF8;
+
+    border: 1px solid #E8D8CA;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(128, 96, 75, 0.10);
+
+}
+
+#cartSection h2 {
+
+    color: #80604B;
+
+    font-family: 'Playfair Display', serif;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+#cartItems p {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #F2E5D5;
+
+    color: #292522;
+
+}
+
+#cartItems button {
+
+    background: #F6DDE5;
+
+    color: #80604B;
+
+    border: none;
+
+    border-radius: 20px;
+
+    padding: 7px 13px;
+
+    cursor: pointer;
+
+}
+
+#cartTotal {
+
+    text-align: right;
+
+    color: #80604B;
+
+    margin-top: 25px;
+
+}
+
+@media (max-width: 600px) {
+
+    #cartSection {
+
+        padding: 18px;
+
+    }
+
+    #cartItems p {
+
+        font-size: 13px;
+
+        flex-wrap: wrap;
+
+    }
+
+    .cart-button {
+
+        padding: 10px 15px;
+
+        font-size: 11px;
+
+    }
+
+}
+.checkout-button {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    background: #80604B;
+    color: #FFFCF8;
+    border: none;
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.checkout-button:hover {
+    background: #292522;
+}
+#customerForm {
+    margin-top: 30px;
+    padding: 20px;
+    background: #F2E5D5;
+    border-radius: 15px;
+}
+
+#customerForm h3 {
+    color: #80604B;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#customerForm input,
+#customerForm textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 14px;
+    padding: 14px;
+    border: 1px solid #E8D8CA;
+    border-radius: 10px;
+    background: #FFFCF8;
+    color: #292522;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+#customerForm input:focus,
+#customerForm textarea:focus {
+    border-color: #80604B;
+}
+
+#customerForm textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+/* ELORA Quantity Controls */
+
+.cart-item {
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #E8D8CA;
+
+}
+
+.cart-item p {
+
+    color: #80604B;
+
+    margin: 5px 0;
+
+}
+
+.quantity-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+.quantity-controls button {
+
+    border: none;
+
+    background: #F6DDE5;
+
+    color: #80604B;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.quantity-controls button:hover {
+
+    background: #D9ECF5;
+
+}
+
+.quantity-controls span {
+
+    color: #292522;
+
+    font-weight: bold;
+
+    min-width: 20px;
+
+    text-align: center;
+
+}
